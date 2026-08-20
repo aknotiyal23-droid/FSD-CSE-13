@@ -33,18 +33,34 @@
     //callback function
 
 
-setTimeout(() => {
-     console.log("one")
-    setTimeout(() => {
-         console.log("two")
-         setTimeout(() => {
-             console.log("three")
-             setTimeout(() => {
-                 console.log("four")
-                setTimeout(() => {
-                     console.log("five")
-                 }, 1000);
-             }, 1000);
-         }, 1000);
-     }, 1000);
- }, 1000);
+//function sumofsqrt(a, b){
+    //  let sum = Math.sqrt(a)+Math.sqrt(b);
+  //   console.log("Sum of square root of "+a+" and "+b+" is "+sum);
+//}
+//sumofsqrt(25, 36);
+
+
+
+//promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It allows you to write asynchronous code in a more synchronous and readable manner, avoiding callback hell. A promise can be in one of three states: pending, fulfilled, or rejected.
+
+const myPromise = new Promise((resolve, reject) => {
+    let username = "Aakash";
+    let password = "12345";
+
+    if (username === "Aakash" && password === "12345") {
+        resolve("Login successful!");
+    } else {
+        reject("Invalid username or password.");
+    }
+});
+
+myPromise
+    .then((message) => {
+        console.log(message);
+    })
+    .catch((msg) => {
+       console.log(msg);
+    })
+    .finally(() => {
+        console.log("All resources have been closed.");
+    });
